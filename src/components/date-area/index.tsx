@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Month from '../month'
-import { getRangeOfMonths } from '../../util/methods'
+import { getRangeOfMonthsFromMiddle } from '../../util/methods'
 
 const DateAreaWrapper = styled.div`
   width: 25%;
@@ -19,7 +19,7 @@ const DateArea: React.FC = () => {
   const [isAtTop, setIsAtTop] = useState<boolean>(false)
   const [isAtBottom, setIsAtBottom] = useState<boolean>(false)
   const [months, setMonths] = useState<number[]>(
-    getRangeOfMonths(startingMonth - 3, startingMonth + 3)
+    getRangeOfMonthsFromMiddle(startingMonth)
   )
   const monthRefs = React.useRef<HTMLDivElement[]>([])
 
