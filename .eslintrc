@@ -33,6 +33,10 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-debugger": "off",
+    "react/prop-types": 0,
     "linebreak-style": "off",
     "prettier/prettier": [
       "error",
