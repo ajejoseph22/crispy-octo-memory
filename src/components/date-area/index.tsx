@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Month from '../month'
-import { getRangeOfMonthsFromMiddle } from '../../util/methods'
+import {
+  addMonthsToBottom,
+  addMonthsToTop,
+  getRangeOfMonthsFromMiddle,
+} from '../../util/methods'
 
 const DateAreaWrapper = styled.div`
   width: 25%;
@@ -16,12 +20,11 @@ const DateArea: React.FC = () => {
   const [startingMonth, setStartingMonth] = useState<number>(
     new Date().getMonth()
   )
-  const [isAtTop, setIsAtTop] = useState<boolean>(false)
-  const [isAtBottom, setIsAtBottom] = useState<boolean>(false)
   const [months, setMonths] = useState<number[]>(
     getRangeOfMonthsFromMiddle(startingMonth)
   )
   const monthRefs = React.useRef<HTMLDivElement[]>([])
+  const dateAreaRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (monthRefs.current[startingMonth]) {
@@ -34,36 +37,29 @@ const DateArea: React.FC = () => {
       e.currentTarget.scrollHeight - e.currentTarget.scrollTop <=
       e.currentTarget.clientHeight * 1.2
 
-    const top =
-      e.currentTarget.scrollHeight - e.currentTarget.scrollTop >=
-      e.currentTarget.scrollHeight * 0.9
-
     if (bottom) {
-      console.log('Bottom')
-      setIsAtBottom(true)
       // load more months into state
-    } else {
-      setIsAtBottom(false)
+      setMonths(addMonthsToBottom([...months]))
     }
-
-    if (top) {
-      console.log('Top')
-      setIsAtTop(true)
+    // if element is at top
+    else if (dateAreaRef.current && dateAreaRef.current.scrollTop < 1) {
       // load more months into state
-    } else {
-      setIsAtTop(false)
+      setMonths(addMonthsToTop([...months]))
+      // adjust the scroll position
+      dateAreaRef.current.scrollBy(0, dateAreaRef.current.clientHeight * 1.2)
     }
   }
+  // load more months into state
 
   return (
-    <DateAreaWrapper onScroll={handleOnScroll}>
-      {months.map((month) => (
+    <DateAreaWrapper ref={dateAreaRef} onScroll={handleOnScroll}>
+      {months.map((month, index) => (
         <Month
           innerRef={(el: HTMLDivElement): void => {
             monthRefs.current[month] = el
           }}
           month={month}
-          key={month}
+          // key={month}
         />
       ))}
     </DateAreaWrapper>

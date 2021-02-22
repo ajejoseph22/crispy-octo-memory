@@ -18,3 +18,39 @@ export function getRangeOfMonthsFromMiddle(middle: number): number[] {
 
   return range
 }
+
+function getAbsoluteValue(monthNumber: number): number {
+  if (monthNumber < 0) {
+    return 12 + monthNumber
+  }
+
+  if (monthNumber > 11) {
+    return monthNumber - 12
+  }
+
+  return monthNumber
+}
+
+export function addMonthsToTop(arrayOfMonthNumbers: number[]): number[] {
+  const start = arrayOfMonthNumbers[0]
+
+  const newStart = start - 3
+
+  for (let i = start - 1; i >= newStart; i -= 1) {
+    arrayOfMonthNumbers.unshift(getAbsoluteValue(i))
+  }
+
+  return arrayOfMonthNumbers
+}
+
+export function addMonthsToBottom(arrayOfMonthNumbers: number[]): number[] {
+  const start = arrayOfMonthNumbers[arrayOfMonthNumbers.length - 1]
+
+  const newStart = start + 3
+
+  for (let i = start + 1; i <= newStart; i += 1) {
+    arrayOfMonthNumbers.push(getAbsoluteValue(i))
+  }
+
+  return arrayOfMonthNumbers
+}
