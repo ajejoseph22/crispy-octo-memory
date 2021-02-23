@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd200809.chunk.css",
-    "main.js": "/static/js/main.0965721a.chunk.js",
-    "main.js.map": "/static/js/main.0965721a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4c49f8c1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4c49f8c1.js.map",
-    "static/js/2.0afac513.chunk.js": "/static/js/2.0afac513.chunk.js",
-    "static/js/2.0afac513.chunk.js.map": "/static/js/2.0afac513.chunk.js.map",
-    "static/js/3.8d03c741.chunk.js": "/static/js/3.8d03c741.chunk.js",
-    "static/js/3.8d03c741.chunk.js.map": "/static/js/3.8d03c741.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.bd200809.chunk.css.map": "/static/css/main.bd200809.chunk.css.map",
-    "static/js/2.0afac513.chunk.js.LICENSE.txt": "/static/js/2.0afac513.chunk.js.LICENSE.txt"
+    "main.css": "/crispy-octo-memory/static/css/main.bd200809.chunk.css",
+    "main.js": "/crispy-octo-memory/static/js/main.0965721a.chunk.js",
+    "main.js.map": "/crispy-octo-memory/static/js/main.0965721a.chunk.js.map",
+    "runtime-main.js": "/crispy-octo-memory/static/js/runtime-main.7039cdfb.js",
+    "runtime-main.js.map": "/crispy-octo-memory/static/js/runtime-main.7039cdfb.js.map",
+    "static/js/2.c6bb8f89.chunk.js": "/crispy-octo-memory/static/js/2.c6bb8f89.chunk.js",
+    "static/js/2.c6bb8f89.chunk.js.map": "/crispy-octo-memory/static/js/2.c6bb8f89.chunk.js.map",
+    "static/js/3.8d03c741.chunk.js": "/crispy-octo-memory/static/js/3.8d03c741.chunk.js",
+    "static/js/3.8d03c741.chunk.js.map": "/crispy-octo-memory/static/js/3.8d03c741.chunk.js.map",
+    "index.html": "/crispy-octo-memory/index.html",
+    "static/css/main.bd200809.chunk.css.map": "/crispy-octo-memory/static/css/main.bd200809.chunk.css.map",
+    "static/js/2.c6bb8f89.chunk.js.LICENSE.txt": "/crispy-octo-memory/static/js/2.c6bb8f89.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4c49f8c1.js",
-    "static/js/2.0afac513.chunk.js",
+    "static/js/runtime-main.7039cdfb.js",
+    "static/js/2.c6bb8f89.chunk.js",
     "static/css/main.bd200809.chunk.css",
     "static/js/main.0965721a.chunk.js"
   ]
